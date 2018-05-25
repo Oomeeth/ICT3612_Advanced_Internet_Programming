@@ -1,0 +1,82 @@
+<?php
+
+	include 'menu.inc';
+
+	/* TASK 1a */
+	
+	echo "<h1>TASK 1a</h1>";
+	
+	function trip($value = '1')
+	{
+		switch($value)
+		{
+			case 1:
+				echo "The light is on";
+				break;
+			case 0:
+				echo "The light is off";
+				break;
+		}
+	}
+	
+	echo "Method one: ";
+	trip();
+	echo "<br>";
+	echo "Method two: ";
+	trip(1);
+	echo "<br><br>";
+	
+	
+	
+	/*TASK 1b */
+	
+	echo "<h1>TASK 1b</h1>";
+	
+	function values($length, $height = 10, $width = 15)
+	{
+		$statement = "The volume of the rectangle is ";
+		$volume = $length * $height * $width;
+		echo $statement . $volume;
+	}
+	
+	echo "Method one: ";
+	values(1, 10, 15);
+	echo "<br>";
+	echo "Method two: ";
+	values(1, 10);
+	echo "<br>";
+	echo "Method three: ";
+	values(1);
+	echo "<br>";
+	
+	
+	
+	/*Task 1c */
+	
+	echo "<h1>TASK 1c</h1>";
+	
+	function add_veggies(&$veggie_array)
+	{
+		$values = func_get_args();
+		
+		foreach($values as $key => $value)
+		{
+			if($key > 0)
+			{
+				$veggie_array[] = $value;
+			}
+		}
+		
+		for($i = 0; $i < count($veggie_array); $i++)
+		{
+			echo $veggie_array[$i] . " ";
+		}
+	}
+	
+	$veggie_array = array("Spinach", "Carrots", "Beans");
+	
+	add_veggies($veggie_array, "Beetroot", "Broccoli");
+
+	echo "<iframe src='task1.txt' style='margin-top:50px;' height='400' scrolling='yes' width='1200px'> <p>Your browser does not support iframes.</p></iframe>";
+	
+?>
